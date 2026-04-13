@@ -1,6 +1,6 @@
 [project]
 name = "fasttext-predict-v2"
-version = "1.0.0"
+version = "1.0.1"
 description = "fasttext with wheels and no external dependency, but only the predict method (<1MB)"
 readme = "README.rst"
 license = "MIT"
