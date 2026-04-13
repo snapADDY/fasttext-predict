@@ -9,7 +9,7 @@ Python package for [fasttext](https://github.com/facebookresearch/fastText):
 ## Usage
 
 ```sh
-pip install fasttext-predict
+uv add fasttext-predict-v2
 ```
 
 ```python

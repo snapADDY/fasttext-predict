@@ -16,3 +16,4 @@ dist/
 wheelhouse/
 python/fasttext_module/fasttext_predict.egg-info/
 python/fasttext_module/fasttext_pybind.*.so
+*.egg-info

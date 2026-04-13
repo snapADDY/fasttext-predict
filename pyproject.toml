@@ -1,8 +1,31 @@
-# based on https://github.com/pybind/python_example/blob/master/pyproject.toml
-[build-system]
-requires = [
-    "setuptools>=42",
-    "pybind11>=2.10.0",
-    "wheel",
+[project]
+name = "fasttext-predict-v2"
+version = "1.0.0"
+description = "fasttext with wheels and no external dependency, but only the predict method (<1MB)"
+readme = "README.rst"
+license = "MIT"
+authors = [{ name = "snapAddy GmbH", email = "info@snapaddy.com" }]
+keywords = ["fasttext", "language detection", "language identification"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development",
+    "Topic :: Scientific/Engineering",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Operating System :: Unix",
+    "Operating System :: MacOS",
 ]
+requires-python = ">=3.11"
+
+[tool.cibuildwheel]
+build = "cp311-* cp312-* cp313-* cp314-*"
+
+[build-system]
+requires = ["setuptools>=42", "pybind11>=2.10.0", "wheel"]
 build-backend = "setuptools.build_meta"

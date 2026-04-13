@@ -10,7 +10,6 @@
 import sys
 import os
 import sysconfig
-import io
 
 from pybind11.setup_helpers import Pybind11Extension, ParallelCompile
 from setuptools import setup
@@ -36,43 +35,7 @@ else:
     extra_compile_args.append('-DVERSION_INFO="%s"' % __version__)
     extra_compile_args.extend(["-O3", "-flto"])
 
-
-def _get_readme():
-    """
-    Use pandoc to generate rst from md.
-    pandoc --from=markdown --to=rst --output=python/README.rst python/README.md
-    """
-    with io.open("README.rst", encoding='utf-8') as fid:
-        return fid.read()
-
-
 setup(
-    name='fasttext-predict',
-    version=__version__,
-    author='Alexandre Flament',
-    author_email='alex.andre@al-f.net',
-    keywords=['fasttext', 'language detection', 'language identification'],
-    description='fasttext with wheels and no external dependency, but only the predict method (<1MB)',
-    long_description=_get_readme(),
-    url='https://github.com/searxng/fasttext-predict/',
-    license='MIT',
-    classifiers=[
-        'Development Status :: 3 - Alpha',
-        'Intended Audience :: Developers',
-        'Intended Audience :: Science/Research',
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3.9',
-        'Programming Language :: Python :: 3.10',
-        'Programming Language :: Python :: 3.11',
-        'Programming Language :: Python :: 3.12',
-        'Programming Language :: Python :: 3.13',
-        'Topic :: Software Development',
-        'Topic :: Scientific/Engineering',
-        'Operating System :: Microsoft :: Windows',
-        'Operating System :: POSIX',
-        'Operating System :: Unix',
-        'Operating System :: MacOS',
-    ],
     packages=[
         'fasttext',
     ],

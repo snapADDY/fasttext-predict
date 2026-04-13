@@ -15,7 +15,7 @@ Usage
 
 .. code:: sh
 
-   pip install fasttext-predict
+   uv add fasttext-predict-v2
 
 .. code:: python
 
